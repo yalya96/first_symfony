@@ -1,0 +1,39 @@
+ {% extends "base.html.twig" %}
+ {% block body %}
+ <h1>ICI ON VAS METTRE L'AFFICHAGE DU CONTENUE DE NOTRE FORMULAIRE</h1>
+ {% if employe %}
+    <table class="table table-striped" >
+        <thead>
+            <tr>
+                <th>Matricule</th>
+                <th>Nom Complet</th>
+                <th>Date de naissance</th>
+                 <th>Salaire</th>
+                  <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for  employe in employe %}
+            
+            <tr>
+                <td>{{employe.matricule}}</td>
+                <td>{{employe.fullname}}</td>
+                <td>{{employe.dateNaissance | date ('d/m/Y') }}</td>
+                <td>{{employe.salaire}}</td>
+                <td>
+                    <a href="{{ path('modif',{id:employe.id})}}" class="btn btn-light">MODIFIER</a>
+                    <a href="{{ path('supp',{id:employe.id})}}" class="btn btn-danger">SUPPRIMER</a>
+
+
+
+                </td>
+            
+            </tr>
+
+        {% endfor %}
+            
+           
+        </tbody>
+    </table>
+{% endif %}
+ {% endblock body %}

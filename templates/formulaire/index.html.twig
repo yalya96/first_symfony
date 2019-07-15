@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FormulaireController!{% endblock %}
+
+{% block body %}
+
+
+    {{form_start(f)}}
+
+    {{form_row(f.matricule)}}
+    {{form_row(f.service) }}
+    {{form_row(f.fullname) }}
+    {{form_row(f.date_naissance) }}
+    {{form_row(f.salaire) }}
+    <button type="submit">
+
+        {% if modif %}
+    MODIFIER
+    {% else %}
+    AJOUTER
+    {% endif %}
+    </button>
+    {{form_end(f)}}
+{% endblock %}

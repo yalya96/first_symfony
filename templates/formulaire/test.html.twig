@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>YO LES TRASHEUR</h1>
+{{form_start(formu)}}
+
+{{form_row(formu.libeller) }}
+
+<button type="submit">Enregistrer</button>
+{{form_end(formu)}}
+
+{% endblock body %}
